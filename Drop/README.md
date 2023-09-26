@@ -7,7 +7,7 @@ Here is the topogoly for drop use case using P4 Programming.
 
 </p>
 
-Here is the virtual topology inside the linux operation system for drop using P4 programming.
+Here is the virtual topology inside the linux operation system for drop use case.
 
 <p align="center">
     <img width="100%" src="../img/drop_topo.png">
