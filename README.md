@@ -60,3 +60,8 @@ Version combinations I have used above for testing VM image:
 | Combo 1 | Ubuntu 22.04.2 LTS | Virtualbox 7.0 |
 | Combo 2 | Windows 11 Enterprise | Virtualbox 7.0 |
 
+## Referances
+
+- [Mininet](https://github.com/mininet/mininet)
+- [P4.org](https://p4.org/)
+- [Advanced Topic in Communication Networks **ETH Zurich**](https://video.ethz.ch/lectures/d-itet/2022/autumn/227-0575-00L/c1df0f1b-d89b-4328-b9d7-7dfd26a5bb46.html) 
