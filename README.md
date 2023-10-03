@@ -7,7 +7,7 @@ In this P4 Project, we have prepared use cases for IoT devices using P4 to help 
 1. Drop, which is dropping any received traffic.
 * [Drop](./Drop/)
 2. Pass, which is forwarding any recived traffic to the destination.
-* [Pass]*Working on it*
+* `Pass`**working on it**
 3. Echo Server, which is checking whether the device can actively reply to traffic.
 * [Echo Server](./Echo_server/)
 4. L3 Forwarding, which is a slighty advanced function that acts on the packet based on a routing table.
