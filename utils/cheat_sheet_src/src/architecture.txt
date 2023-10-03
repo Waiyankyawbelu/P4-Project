@@ -35,7 +35,7 @@ control Deparser<H>(
   packet_out b, in H hdr
 );
 
-// v1model switch
+// v1model switch (BMv2)
 package V1Switch<H, M>(
   Parser<H, M> p,
   VerifyChecksum<H, M> vr,

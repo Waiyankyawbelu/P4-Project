@@ -1,4 +1,4 @@
-// common defns for IPv4 and IPv6
+// common defns for IPv4 and IPv6 
 header ip46_t {
   bit<4> version;
   bit<4> reserved;
