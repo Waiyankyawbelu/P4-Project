@@ -26,7 +26,7 @@ For instance, when targeting [``BMV2``](https://github.com/p4lang/behavioral-mod
 To initiate the scenario, we've created a Makefile to compile our P4 program, resulting in *.p4info and *.json files. Next, we'll run the[``run_exercise.py``](https://github.com/Waiyankyawbelu/P4-Project/blob/main/utils/run_exercise.py) script, which will set up the network topology defined in the [``scenario/topology.json``](scenario/topology.json) file using [``Mininet``](https://github.com/mininet/mininet). Each switch in the topology will incorporate our P4 program logic, all managed within one BMV2 instance. The diagram below provides an overview of a single switch's configuration.
 
 <p align="center">
-    <img width="50%" src="../img/drop/p4_setup.png">
+    <img width="100%" src="../img/drop/p4_setup.png">
 </p>
 
 To put the use case into action, we need to:
