@@ -28,7 +28,7 @@ All use cases in this repository use the v1model architecture, the documentation
 1. The BMv2 Simple Switch target document accessible [here](https://github.com/p4lang/behavioral-model/blob/master/docs/simple_switch.md) talks mainly about the v1model architecture.
 2. The include file `v1model.p4` has extensive comments and can be accessed [here](https://github.com/p4lang/p4c/blob/master/p4include/v1model.p4).
 
-## Obtaining required softwer 
+## Obtaining required software 
 
 To evaluate the use cases, you have two options. You can either create a virtual machine and manually install several dependencies, 
 or you can use a pre-configured virtual machine that already has all the necessary software installed.
@@ -43,7 +43,7 @@ or you can use a pre-configured virtual machine that already has all the necessa
 - When the machine reboots, you should have a graphical desktop machine with the required software pre-installed.  There are two user accounts on the VM, `vagrant` (password `vagrant`) and `p4` (password `p4`).  The account `p4` is the one you are expected to use.
 - You can see the installation steps [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md#quick-instructions-for-successful-install-script-run).
 
-### `Release` VM images with P4 development tools (Option 2)
+### **Release** VM images with P4 development tools (Option 2)
 
 There are instructions and scripts in another Github repository that can, starting from a freshly installed Ubuntu 20.04 or 22.04 Linux system with enough RAM and free disk space, install all of the necessary P4 development tools to run the exercises in this repository.  You can find those instructions and scripts [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md).
 
