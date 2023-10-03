@@ -60,7 +60,7 @@ Version combinations I have used above for testing VM image:
 | Combo 1 | Ubuntu 22.04.2 LTS | Virtualbox 7.0 |
 | Combo 2 | Windows 11 Enterprise | Virtualbox 7.0 |
 
-## Referances
+## References
 
 - [Mininet](https://github.com/mininet/mininet)
 - [P4.org](https://p4.org/)
