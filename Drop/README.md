@@ -89,8 +89,8 @@ wireshark pcaps/s1-eth1_in.pcap
 ## References
 
 - [Mininet](https://github.com/mininet/mininet)
-- [P4 Tutorials **ETH Zurich**](https://video.ethz.ch/lectures/d-itet/2022/autumn/227-0575-00L/c1df0f1b-d89b-4328-b9d7-7dfd26a5bb46.html) 
-
+- [P4 Tutorials](https://github.com/p4lang/tutorials) 
+- [Advanced Topics in Communication Networks **ETH Zurich**](https://video.ethz.ch/lectures/d-itet/2022/autumn/227-0575-00L/c1df0f1b-d89b-4328-b9d7-7dfd26a5bb46.html)
 
 
 
