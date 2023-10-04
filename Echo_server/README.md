@@ -73,13 +73,13 @@ tcpdump -i s2-eth2 icmp
 ```
 or
 
-We can open ``Wireshark`` for port ``s2-eth2`` or ``s1-eth1`` to capture the ``ICMP`` traffice between ``host1`` and ``host4``.
+We can open ``Wireshark`` for port ``s2-eth2`` or ``s1-eth1`` to capture the ``ICMP`` traffic between ``host1`` and ``host4``.
 
 ```bash
 sudo wireshark 
 ```
 
-As a resul, the connectivity will succeed, indicating the correct functionality of the developedd P4 program for ``Echo Server``. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows: 
+As a result, the connectivity will succeed, indicating the correct functionality of the developedd P4 program for ``Echo Server``. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows: 
 
 ```bash
 less build/drop.json
