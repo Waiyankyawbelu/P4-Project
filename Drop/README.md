@@ -72,7 +72,7 @@ On the other hand, we wil conduct a ping test from ``host1`` to ``host4``.
 # host1 xterm terminal
 ping 192.168.4.4
 ```
-However, the connectivity will not succeed, indicating the correct functionality of the developed P4 program. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows
+However, the connectivity will not succeed, indicating the correct functionality of the developed P4 program. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows:
 
 ```bash
 less build/drop.json
