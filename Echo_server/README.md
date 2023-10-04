@@ -73,7 +73,7 @@ tcpdump -i s2-eth2 icmp
 ```
 or
 
-We can open ``Wireshark`` in port ``s2-eth2`` or ``s1-eth1`` to capture the ``ICMP`` traffice between ``host1`` and ``host2``.
+We can open ``Wireshark`` for port ``s2-eth2`` or ``s1-eth1`` to capture the ``ICMP`` traffice between ``host1`` and ``host4``.
 
 ```bash
 sudo wireshark 
