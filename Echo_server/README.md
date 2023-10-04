@@ -10,10 +10,21 @@ We're creating an echo server that responds to incoming pings. To test this, we'
 
 ## Compilation
 
-We'll compile our P4 program with the [``p4c``](https://github.com/p4lang/p4c) compiler. If you're new to this compiler or unsure about the compilation process, refer back to [``Drop``](../Drop) for a detailed explanation of how to compile a P4 program and the steps involved.
+We'll compile our P4 program using the [``p4c``](https://github.com/p4lang/p4c) compiler, the reference compiler for P4. It has two compilation stages: the frontend generates a *.p4info file containing program attributes, and the backend generates target-specific files. 
+
+<p align="center">
+    <img width="50%" src="../img/drop/compilation_bmv2.png">
+</p>
+
+For instance, when targeting [``BMV2``](https://github.com/p4lang/behavioral-model), it creates a ``*.json`` file, defining the entire datapath as programmed.
 
 ## Setting up the scenario
 
+To initiate the scenario, we've created a Makefile to compile our P4 program, resulting in *.p4info and *.json files. Next, we'll run the[``run_exercise.py``](https://github.com/Waiyankyawbelu/P4-Project/blob/main/utils/run_exercise.py) script, which will set up the network topology defined in the [``scenario/topology.json``](scenario/topology.json) file using [``Mininet``](https://github.com/mininet/mininet). Each switch in the topology will incorporate our P4 program logic, all managed within one BMV2 instance. The diagram below provides an overview of a single switch's configuration.
+
+<p align="center">
+    <img width="100%" src="../img/drop/p4_setup.png">
+</p>
 
 To put the use case into action, we need to:
 ```bash
