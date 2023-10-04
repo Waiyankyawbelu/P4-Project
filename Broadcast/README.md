@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this use case, we aim to use broadcast type to find the right destination.  The following figure shows the network topology for ``Braodcast`` use case.
+In this use case, we aim to use broadcast type to find the right destination.  The following figure shows the network topology for ``Broadcast`` use case.
 
 <p align="center">
 	<img width="%50" src="../img/broadcast/network_broadcast.png">
