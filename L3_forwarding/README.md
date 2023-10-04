@@ -1,7 +1,7 @@
 # P4 - L3_Forwarding
 ## Introduction
 
-In this use case, we aim to create simple layer 3 network forwarding, essentially turning our hypothetical "switch" into a basic router with minimal capabilities. The followin figure shows the network topology for ``L3 Forwarding`` use case.
+In this use case, we aim to create simple layer 3 network forwarding, essentially turning our hypothetical "switch" into a basic router with minimal capabilities. The following figure shows the network topology for ``L3 Forwarding`` use case.
 
 
 <p align="center">
