@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We're creating an echo server that responds to incoming pings. To test this, we'll use the [``behavioral-model``](https://github.com/p4lang/behavioral-model), [``BMV2``](https://github.com/p4lang/behavioral-model) switch software and [``Mininet``](https://github.com/mininet/mininet). Our network setup is identical to the [``Drop``](../Drop) use case.
+In this use case, we aim to use broadcast type to find the right destination.  The following figure shows the network topology for ``Braodcast`` use case.
 
 <p align="center">
 	<img width="%50" src="../img/broadcast/network_broadcast.png">
