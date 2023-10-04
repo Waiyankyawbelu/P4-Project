@@ -90,7 +90,7 @@ less logs/s1.log
 ```
 
 ```bash
-wireshark pcaps/s1-eth1_in.pcap
+wireshark pcaps/s1-eth1_out.pcap 
 ```
 
 ## References
