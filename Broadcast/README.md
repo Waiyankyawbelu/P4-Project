@@ -54,32 +54,38 @@ sudo make clean
     <img width="100%" src="../img/broadcast/broadcast_topo.png">
 </p>
 
-Then, we will have the CLI of [``Mininet``](https://github.com/mininet/mininet), so we will open two xterm terminals for ``host1`` and ``host4``.
+Then, we will have the CLI of [``Mininet``](https://github.com/mininet/mininet), so we will open two xterm terminals for ``host1``, ``host3``, ``host5`` and ``host6``.
 
 ```bash 
-mininet> xterm h1 h4
+mininet> xterm h1 h3 h5 h6
 ```
-With both terminals open, from the ``host1``, we conduct a ping to ``host4``. 
+With all terminals open, from the ``host1``, we conduct a ping to ``host6``. 
 
 ```bash 
 # host1 xterm terminal
-ping 192.168.4.4
+ping 192.168.6.6
 ```
-On the other hand, we put to listen ``ICMP`` traffic by its interface which is connected to ``s2-eth2``.
+On the other hand, we put to listen traffic by its interface in each ``host3``, ``host5`` and ``host6``.
 
 ```bash 
-# host4 xterm terminal
-tcpdump -i s2-eth2 icmp
+# host3 xterm terminal
+tcpdump -l
+
+# host5 xterm terminal
+tcpdump -l
+
+# host6 xterm terminal
+tcpdump -l
 ```
 or
 
-We can open ``Wireshark`` for port ``s2-eth2`` or ``s1-eth1`` to capture the ``ICMP`` traffic between ``host1`` and ``host4``.
+We can open ``Wireshark`` to capture how to ``broadcast`` in the network.
 
 ```bash
 sudo wireshark 
 ```
 
-As a result, the connectivity will succeed, indicating the correct functionality of the developedd P4 program for ``Echo Server``. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows: 
+As a result, the connectivity will succeed. First, the switch will ask in its network who is the destination and then the destination in this case ``host6`` will reply to its switch. Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows: 
 
 ```bash
 less build/drop.json
@@ -98,5 +104,5 @@ wireshark pcaps/s1-eth1_out.pcap
 *	 [Mininet](https://github.com/mininet/mininet)
 *	 [P4 Tutorials](https://github.com/p4lang/tutorials) 
 *	 [Advanced Topics in Communication Networks **ETH Zurich**](https://video.ethz.ch/lectures/d-itet/2022/autumn/227-0575-00L/c1df0f1b-d89b-4328-b9d7-7dfd26a5bb46.html)
-*	 [RFC 8200: Internet Protocol, Version 6 (IPv6) Specification](https://tools.ietf.org/html/rfc8200)
 *	 [RFC 792: ICMP](https://tools.ietf.org/html/rfc792)
+*    [RFC 919: Broadcast](https://www.rfc-editor.org/rfc/rfc919.html)
