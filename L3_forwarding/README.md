@@ -16,7 +16,7 @@ We'll compile our P4 program using the [``p4c``](https://github.com/p4lang/p4c) 
 In this program p4, we need to outline a table's structure, specifying available actions, the parameters they accept, matching criteria, key fields for lookups, and the maximum number of entries.
 
 <p align="center">
-    <img width="50%" src="../img/l3_forwarding/control_plane_table.png">
+    <img width="100%" src="../img/l3_forwarding/control_plane_table.png">
 </p>
 
 Through the control plane using ``P4Runtime`` or ``JSON`` files with ``sX-runtime.json``, we will add entries to the table and define the action parameters for when a match occurs. Specifically, we'll associate IPs with a forwarding action, determining the egress port and destination MAC address for packet forwarding.
