@@ -13,11 +13,13 @@ In this use case, we aim to create simple layer 3 network forwarding, essentiall
 
 We'll compile our P4 program using the [``p4c``](https://github.com/p4lang/p4c) compiler, the reference compiler for P4. It has two compilation stages: the frontend generates a *.p4info file containing program attributes, and the backend generates target-specific files. 
 
+In this program p4, we need to outline a table's structure, specifying available actions, the parameters they accept, matching criteria, key fields for lookups, and the maximum number of entries.
+
 <p align="center">
-    <img width="50%" src="../img/drop/compilation_bmv2.png">
+    <img width="50%" src="../img/l3_forwarding/control_plane_table.png">
 </p>
 
-For instance, when targeting [``BMV2``](https://github.com/p4lang/behavioral-model), it creates a ``*.json`` file, defining the entire datapath as programmed.
+Through the control plane using ``P4Runtime`` or ``JSON`` files with ``sX-runtime.json``, we will add entries to the table and define the action parameters for when a match occurs. Specifically, we'll associate IPs with a forwarding action, determining the egress port and destination MAC address for packet forwarding.
 
 ## Setting up the scenario
 
