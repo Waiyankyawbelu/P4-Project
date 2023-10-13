@@ -19,17 +19,17 @@
 ***********************  W A I Y A N *************************************
 *************************************************************************/
 
-/*	---	Layer 2 Code	     ---	*/
-const bit<16> ETHERTYPE_IPV4 = 0x0800;
-const bit<16> ETHERTYPE_IPV6 = 0x86dd;
+/* --- Info for Layer 2  --- */
+const bit<16> etherType_ipv4 = 0x0800;
+const bit<16> etherType_ipv6 = 0x86dd;
 
-/*	---	Layer 3 Code	     ---	*/
-const bit<8> IP_PROTOCOL_ICMP = 0x01;
-const bit<8> IP_PROTOCOL_ICMPv6 = 0x3a; 
-const bit<8> ICMP_ECHO_REQUEST_TYPE = 0x08;
-const bit<8> ICMP_ECHO_REQUEST_CODE = 0x00;
-const bit<8> ICMP_ECHO_REPLY_TYPE = 0x00;
-const bit<8> ICMP_ECHO_REPLY_CODE = 0x00;
+/* --- Info for Layer 3  --- */
+const bit<8> ipProtocol_icmp = 0x01;
+const bit<8> ipProtocol_icmpv6 = 0x3a;
+const bit<8> icmpEchoRequestType = 0x08;
+const bit<8> icmpEchoRequestCode = 0x00;
+const bit<8> icmpEchoReplyType = 0x00;
+const bit<8> icmpEchoReplyCode = 0x00;
 
 
 /*************************************************************************
@@ -92,7 +92,7 @@ struct metadata {
 struct headers {
     ethernet_t   ethernet;
     ipv4_t       ipv4;
-    ipv6_t	 ipv6;
+    ipv6_t	     ipv6;
     icmp_t       icmp;
     icmp6_t      icmp6;
 }
@@ -113,8 +113,8 @@ parser MyParser(packet_in packet,
     state parse_ethernet {
         packet.extract(hdr.ethernet);
         transition select(hdr.ethernet.etherType) {
-            ETHERTYPE_IPV4: parse_ipv4;
- 	    ETHERTYPE_IPV6: parse_ipv6;
+            etherType_ipv4: parse_ipv4;
+ 	        etherType_ipv6: parse_ipv6;
             default: accept;
         }
     }
@@ -122,7 +122,7 @@ parser MyParser(packet_in packet,
     state parse_ipv4 {
         packet.extract(hdr.ipv4);
         transition select( hdr.ipv4.protocol){
-		IP_PROTOCOL_ICMP: parse_icmp;
+		ipProtocol_icmp: parse_icmp;
 		default: accept;		
 	}
     }
@@ -130,7 +130,7 @@ parser MyParser(packet_in packet,
     state parse_ipv6 {
         packet.extract(hdr.ipv6);
         transition select(hdr.ipv6.nextHdr){
-		IP_PROTOCOL_ICMPv6: parse_icmp6;
+		ipProtocol_icmpv6: parse_icmp6;
 		default: accept;
 	}
     }
@@ -181,8 +181,8 @@ control MyIngress(inout headers hdr,
 	hdr.ipv4.dstAddr = temp_ip;
   
 	/*      ---     Re-Write ICMP's type and code     ---     */
-	hdr.icmp.type = ICMP_ECHO_REPLY_TYPE;
-	hdr.icmp.code = ICMP_ECHO_REPLY_CODE;
+	hdr.icmp.type = icmpEchoReplyType;
+	hdr.icmp.code = icmpEchoReplyCode;
 
 	/*      ---     Forward the packet to the ingress intf     ---     */
 	standard_metadata.egress_spec = standard_metadata.ingress_port;
@@ -204,8 +204,8 @@ control MyIngress(inout headers hdr,
         hdr.ipv6.dstAddr = temp_ip6;
 
         /*      ---     Re-Write ICMP's type and code     ---     */
-        hdr.icmp6.type = ICMP_ECHO_REPLY_TYPE;
-        hdr.icmp6.code = ICMP_ECHO_REPLY_CODE;
+        hdr.icmp6.type = icmpEchoReplyType;
+        hdr.icmp6.code = icmpEchoReplyCode;
 
         /*      ---     Forward the packet to the ingress intf     ---     */
         standard_metadata.egress_spec = standard_metadata.ingress_port;
@@ -263,14 +263,6 @@ control MyComputeChecksum(inout headers  hdr, inout metadata meta) {
 
 control MyDeparser(packet_out packet, in headers hdr) {
     apply {
-
-	/*	Only the headers will be emitted in the case of having the
-	 *	validity bit at "1" so nothing happens by emitting all the
- 	 * 	headers, since only the valid ones will be emitted. In the
-	 *	first instance, we wanted to apply a conditional structure
- 	 * 	in this block of the v1switch architecture, but at the moment,
-	 * 	the use of conditional blocks in this block is not contemplated.
-	*/	
 
 		packet.emit(hdr.ethernet);
 		packet.emit(hdr.ipv4);
