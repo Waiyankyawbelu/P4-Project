@@ -20,8 +20,8 @@
 *************************************************************************/
 
 /*	---	Layer 2 Types	     ---	*/
-const bit<16> ETHERTYPE_IPV4 = 0x0800;
-const bit<16> ETHERTYPE_IPV6 = 0x86dd;
+const bit<16> etherType_ipv4 = 0x0800;
+const bit<16> etherType_ipv6 = 0x86dd;
 
 
 
@@ -99,8 +99,8 @@ parser MyParser(packet_in packet,
     state parse_ethernet {
         packet.extract(hdr.ethernet);
         transition select(hdr.ethernet.etherType) {
-       	    ETHERTYPE_IPV4: parse_ipv4;
- 	    ETHERTYPE_IPV6: parse_ipv6;
+       	   etherType_ipv4: parse_ipv4;
+ 	       etherType_ipv6: parse_ipv6;
             default: accept;
 	}
     }
@@ -148,7 +148,7 @@ control MyIngress(inout headers hdr,
     
     table ipv4_lpm {
         key = {
-            hdr.ipv4.dstAddr: lpm;
+            hdr.ipv4.dstAddr: lpm; 
         }
         actions = {
             ipv4_forward;
