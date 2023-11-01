@@ -15,14 +15,14 @@ In this P4 Project, we have prepared use cases for IoT devices using P4 to help 
 3. Echo Server, which is checking whether the device can actively reply to traffic.
 * [Echo Server](./Echo_server/)
 4. L3 Forwarding, which is a slighty advanced function that acts on the packet based on a routing table.
-* [L3_Forwarding](./L3_forwarding/)
+* [L3 Forwarding](./L3_forwarding/)
 5. Broadcast, which is commonly send the received packets on its network to get reply from the destination device.
 * [Broadcast](./Broadcast/)
 
 
 ## P4 Documentation
 
-The documentation for P4_16 and P4Runtime is available [here](https://p4.org/specs/)
+The documentation for P4_16 and P4Runtime is available [here](https://p4.org/specs/).
 
 All use cases in this repository use the v1model architecture, the documentation for which is available at:
 1. The BMv2 Simple Switch target document accessible [here](https://github.com/p4lang/behavioral-model/blob/master/docs/simple_switch.md) talks mainly about the v1model architecture.
