@@ -1,7 +1,7 @@
 # P4 Project for IoT Devices
 
 **Title**: Integrated IoT devices uing P4 programming in SDN environment. <br>
-**Tutor**: [Juan Pedro Muñoz Gea](https://personas.upct.es/perfil/juanp.gea) **Tutor** [Elans Grabs](https://ortus.rtu.lv/science/en/experts/1537) <br>
+**Tutor**: [Juan Pedro Muñoz Gea](https://personas.upct.es/perfil/juanp.gea), **Tutor**: [Elans Grabs](https://ortus.rtu.lv/science/en/experts/1537) <br>
 **Degree**: Telematics engineering, [Polytechnic University of Cartagena](https://www.upct.es/) <br>
 **Degree**: Engineering Science in Telecommunications [Riga Technical University](https://www.rtu.lv/en)
 
