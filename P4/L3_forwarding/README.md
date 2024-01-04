@@ -1,0 +1,110 @@
+# P4 - L3_Forwarding
+## Introduction
+
+In this use case, we aim to create simple layer 3 network forwarding, essentially turning our hypothetical "switch" into a basic router with minimal capabilities. The following figure shows the network topology for ``L3 Forwarding`` use case.
+
+
+<p align="center">
+    <img width="50%" src="../../img/l3_forwarding/network_topo_l3.png">
+
+</p>
+
+## Compilation
+
+We'll compile our P4 program using the [``p4c``](https://github.com/p4lang/p4c) compiler, the reference compiler for P4. It has two compilation stages: the frontend generates a *.p4info file containing program attributes, and the backend generates target-specific files. 
+
+In this program p4, we need to outline a table's structure, specifying available actions, the parameters they accept, matching criteria, key fields for lookups, and the maximum number of entries.
+
+<p align="center">
+    <img width="100%" src="../../img/l3_forwarding/control_plane_table.png">
+</p>
+
+Through the control plane using ``P4Runtime`` or ``JSON`` files with ``sX-runtime.json``, we will add entries to the table and define the action parameters for when a match occurs. Specifically, we'll associate IPs with a forwarding action, determining the egress port and destination MAC address for packet forwarding.
+
+## Setting up the scenario
+
+To initiate the scenario, we've created a Makefile to compile our P4 program, resulting in *.p4info and *.json files. Next, we'll run the[``run_exercise.py``](https://github.com/Waiyankyawbelu/P4-Project/blob/main/utils/run_exercise.py) script, which will set up the network topology defined in the [``scenario/topology.json``](scenario/topology.json) file using [``Mininet``](https://github.com/mininet/mininet). Each switch in the topology will incorporate our P4 program logic, all managed within one BMV2 instance. The diagram below provides an overview of a single switch's configuration.
+
+<p align="center">
+    <img width="100%" src="../../img/drop/p4_setup.png">
+</p>
+
+To put the use case into action, we need to:
+```bash
+sudo make run
+```
+
+If we want to stop all the auxiliary files for loading the p4 program and minitnet, we have to write:
+
+```bash
+sudo make stop
+```
+
+After verifying the use case's proper operation, we have to clean up all the file such as ``build``, ``logs`` and ``pcaps``. We need to:
+
+```bash
+sudo make clean
+```
+
+## Testing
+
+- Running ``make run`` sets up the described use case topology.
+- The topology specifics are in a JSON file called [``topology.json``](scenario/topology.json) in the [``scenario``](scenario) directory.
+- This file contains data about control plane files for each topology switch.
+- We've followed the naming standard set by P4Lang, which uses ``sX-runtime.json``, with X indicating the switch's position in [``Mininet``](https://github.com/mininet/mininet).
+
+<p align="center">
+    <img width="100%" src="../../img/l3_forwarding/l3_forwarding_topo.png">
+</p>
+
+Then, we will have the CLI of [``Mininet``](https://github.com/mininet/mininet), so we will open two xterm terminals for ``host1``, ``host2``, ``host3`` and ``host5``.
+
+```bash 
+mininet> xterm h1 h2 h3 h5
+```
+
+With all terminals open from the ``host1``and ``host2``, we conduct ping tests to ``host3`` and ``host5``.
+
+ ```bash 
+# host1 xterm terminal
+ping 192.168.3.3
+
+# host2 xterm terminal
+ping 192.168.5.5
+```
+On the other hand, we put to listen traffic by both ``host3`` and ``host5`` interfaces.
+
+```bash 
+# host3 xterm terminal
+tcpdump -l
+
+# host5 xterm terminal
+tcpdump -l
+```
+
+Besides, we can open ``Wireshark`` for both ``host3`` and ``host5`` to capture traffic. 
+
+```bash
+sudo wireshark 
+```
+
+As results, the connectivities will succeed between ``hosts``.Additionally, we can examine the ``build``, ``logs`` and ``pcaps`` directories generated at the start of the scenario as follows: 
+
+```bash
+less build/drop.json
+```
+
+```bash
+less logs/s1.log
+```
+
+```bash
+wireshark pcaps/s1-eth1_out.pcap 
+```
+
+## References
+
+*	 [Mininet](https://github.com/mininet/mininet)
+*	 [P4 Tutorials](https://github.com/p4lang/tutorials) 
+*	 [Advanced Topics in Communication Networks **ETH Zurich**](https://video.ethz.ch/lectures/d-itet/2022/autumn/227-0575-00L/c1df0f1b-d89b-4328-b9d7-7dfd26a5bb46.html)
+*    [RFC 7426: SDN](https://datatracker.ietf.org/doc/rfc7426/)
