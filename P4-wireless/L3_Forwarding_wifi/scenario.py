@@ -16,16 +16,16 @@ def topology(remote_controller):
     net = Mininet_wifi()
 
     info('*** Adding stations/hosts\n')
-    sta1 = net.addStation('sta1', ip='10.0.1.1', mac='08:00:00:00:01:11')
-    sta2 = net.addStation('sta2', ip='10.0.2.2', mac='08:00:00:00:02:22')
-    sta3 = net.addStation('sta3', ip='10.0.3.3', mac='08:00:00:00:03:33')
+    sta1 = net.addStation('sta1', ip='192.168.1.1', mac='08:00:00:00:01:11')
+    sta2 = net.addStation('sta2', ip='192.168.2.2', mac='08:00:00:00:02:22')
+    sta3 = net.addStation('sta3', ip='192.168.3.3', mac='08:00:00:00:03:33')
 
     args1 = dict()
     args2 = dict()
     args3 = dict()
     if not remote_controller:
         path = os.path.dirname(os.path.abspath(__file__))
-        json_file = path + '/ap-runtime.json'
+        json_file = path + '/build/l3_forwarding.json'
         config1 = path + '/build/ap1-runtime.json'
         config2 = path + '/build/ap2-runtime.json'
         config3 = path + '/build/ap3-runtime.json'
