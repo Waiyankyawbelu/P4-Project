@@ -68,23 +68,20 @@ Version combinations I have used above for testing VM image:
 
 ## Obtaining required software For Wireless media
 
-- Install [Vagrant](https://vagrantup.com) and [VirtualBox](https://virtualbox.org)
-- Clone the repository
-- Before proceeding, ensure that your system has at least 12 Gbytes of free disk space, otherwise the installation can fail in unpredictable ways.
-- `cd vm-ubuntu-20.04`
-- `vagrant up` - The time for this step to complete depends upon your computer and Internet access speeds. 
-- When the machine reboots, you should have a graphical desktop machine with the required software pre-installed.  There are two user accounts on the VM, `vagrant` (password `vagrant`) and `p4` (password `p4`).  The account `p4` is the one you are expected to use.
-- You can see the installation steps [here](https://github.com/intrig-unicamp/mininet-wifi)
+### **Release** VM images with P4 development tools 
 
-### **Release** VM images with P4 development tools (Option 2)
-
-There are instructions and scripts in another Github repository that can, starting from a freshly installed Ubuntu 20.04 or 22.04 Linux system with enough RAM and free disk space, install all of the necessary P4 development tools to run the exercises in this repository.  You can find those instructions and scripts [here](https://github.com/jafingerhut/p4-guide/blob/master/bin/README-install-troubleshooting.md).
-
-For our project, we selected 'option 2' and utilized the 'Release' VM images with the Ubuntu 20.04 operating system. We conducted testing on both Linux and Windows operating systems, as shown in the table below.
+For our project, we utilized the 'Release' VM images with the Lubuntu 20.04 operating system. We conducted testing on both Linux and Windows operating systems, as shown in the table below.
 
 | Operation system | Development VM Image Link | REAMME link | Tested working on Linux | Tested working on Windows |
 | :--------------: | :-----------------------: | :----------:| :---------------------: | :-----------------------: |
 | Lubuntu 20.04 | [6.7 GByte VM image](https://drive.google.com/file/d/1oozRqFO2KjjxW0Ob47d6Re4i6ay1wdwg/view) | [README](https://github.com/intrig-unicamp/mininet-wifi/tree/master#readme) | Combo 1 | Combo 2 |
+
+Version combinations I have used above for testing VM image:
+
+| Combination id | Opearting system | VM software |
+| :------------: | :--------------: | :---------: |
+| Combo 1 | Ubuntu 22.04.2 LTS | Virtualbox 7.0 |
+| Combo 2 | Windows 11 Enterprise | Virtualbox 7.0 |
 
 
 
