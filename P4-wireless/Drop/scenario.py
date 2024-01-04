@@ -1,13 +1,5 @@
 #!/usr/bin/python
 
-"""
-You need to activate the following apps if you want to run this code with ONOS:
-
-onos> app activate fwd drivers.bmv2 drivers.mellanox pipelines.fabric
-      proxyarp lldpprovider hostprovider segmentrouting
-"""
-
-
 import os
 import sys
 
