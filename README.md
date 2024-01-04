@@ -34,7 +34,7 @@ All use cases in this repository use the v1model architecture, the documentation
 1. The BMv2 Simple Switch target document accessible [here](https://github.com/p4lang/behavioral-model/blob/master/docs/simple_switch.md) talks mainly about the v1model architecture.
 2. The include file `v1model.p4` has extensive comments and can be accessed [here](https://github.com/p4lang/p4c/blob/master/p4include/v1model.p4).
 
-## Obtaining required software For Wired Media
+## Obtaining required software for Wired Media
 
 To evaluate the use cases, you have two options. You can either create a virtual machine and manually install several dependencies, 
 or you can use a pre-configured virtual machine that already has all the necessary software installed.
@@ -66,7 +66,7 @@ Version combinations I have used above for testing VM image:
 | Combo 1 | Ubuntu 22.04.2 LTS | Virtualbox 7.0 |
 | Combo 2 | Windows 11 Enterprise | Virtualbox 7.0 |
 
-## Obtaining required software For Wireless media
+## Obtaining required software for Wireless media
 
 ### **Release** VM images with P4 development tools 
 
