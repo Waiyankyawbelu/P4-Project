@@ -20,7 +20,7 @@ In this P4 Project, we have prepared use cases for IoT devices using P4 to help 
 * [Echo Server(Wireless)](./P4-wireless/Echo_Server/)
 4. L3 Forwarding, which is a slighty advanced function that acts on the packet based on a routing table.
 * [L3 Forwarding](./P4/L3_forwarding/)
-* [L3 Forwarding(Wireless)](./P4-wireless/L3_Forwarding_wifi/)
+* [L3 Forwarding(Wireless)](./P4-wireless/L3_Forwarding/)
 5. Broadcast, which is commonly send the received packets on its network to get reply from the destination device.
 * [Broadcast](./P4/Broadcast/)
 * [Broadcast(Wireless)](./P4-wireless/Broadcast/)
