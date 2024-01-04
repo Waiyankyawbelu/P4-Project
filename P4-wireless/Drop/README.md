@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this use case, we aim to demonstrate the capability of discarding received packets using a P4 program on a virtual Wireless interface. As this use case is similar to the wired P4 Drop explained earlier [```Drop```](../../P4/Drop/) with no notable environmental differences discussed in the previous section, only instruction on compilation and implementation will be provided. In addition, it is essential to note that to replicate this use case, ensure that [```Mininet-WiFi```] dependencies with [```BMv2```] support are adequately installed.
+In this use case, we aim to demonstrate the capability of discarding received packets using a P4 program on a virtual Wireless interface. As this use case is similar to the wired P4 Drop explained earlier [```Drop```](../../P4/Drop/) with no notable environmental differences discussed in the previous section, only instruction on compilation and implementation will be provided. In addition, it is essential to note that to replicate this use case, ensure that ```Mininet-WiFi``` dependencies with ```BMv2``` support are adequately installed.
 ## Compilation
 
 For this use case, a Makefile simplifies compilation, eliminating the need for users to learn the [```p4c```] compiler process. To delve deeper into the compilation stages or targest based on architecture, you can check on [``Drop``](../../P4/Drop/). Simply follow the steps outlined for the compilation process.
