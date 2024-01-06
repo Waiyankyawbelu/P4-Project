@@ -82,7 +82,7 @@ control MyIngress(inout headers hdr,
         mark_to_drop(standard_metadata);
     }
 
-    action multicast() {ap-runtime
+    action multicast() {
         standard_metadata.mcast_grp = 1;
     }
 
