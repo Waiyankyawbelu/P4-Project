@@ -1,6 +1,6 @@
 {
     "target": "bmv2",
-    "p4info": "build/drop.p4.p4info.txt",
-    "bmv2_json": "build/drop.json",
+    "p4info": "build/echo_server.p4.p4info.txt",
+    "bmv2_json": "build/echo_sever.json",
     "table_entries": []
   }

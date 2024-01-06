@@ -264,13 +264,6 @@ control MyComputeChecksum(inout headers  hdr, inout metadata meta) {
 control MyDeparser(packet_out packet, in headers hdr) {
     apply {
 
-	/*	Only the headers will be emitted in the case of having the
-	 *	validity bit at "1" so nothing happens by emitting all the
- 	 * 	headers, since only the valid ones will be emitted. In the
-	 *	first instance, we wanted to apply a conditional structure
- 	 * 	in this block of the v1switch architecture, but at the moment,
-	 * 	the use of conditional blocks in this block is not contemplated.
-	*/	
 
 		packet.emit(hdr.ethernet);
 		packet.emit(hdr.ipv4);
